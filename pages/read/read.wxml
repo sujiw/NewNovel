@@ -1,0 +1,30 @@
+<loading wx:if="{{loading}}">
+    加载中...
+</loading>
+<view class='main' style='background: #{{backgroundGroup[backgroundId][1]}} url(https://book.mdaogo.cn/public/images/{{backgroundGroup[backgroundId][1]}}.png) repeat;color:#{{backgroundGroup[backgroundId][0]}}'>
+  <scroll-view wx:if='{{!loading}}'  scroll-top='{{scrollTop}}' bindscroll='onScroll' scroll-y='true'>
+    <button class='btn_read' bindtap='upperChapter'>上一章</button>
+    <view class='content' style='font-size:{{fontSize}}rpx' bindtap='isSet'>
+      <text wx:for='{{content}}' wx:key=''>{{item}}</text>
+    </view>
+    <button class='btn_read' bindtap='nextChapter'>下一章</button>
+  </scroll-view>
+</view>
+<view class="bottom_view" wx:if='{{isSet}}'>
+    <view class="text_control">
+        <view>Aa-</view>
+        <view class="pro_bar">
+            <slider value="{{fontSize}}" bindchange="setfontSize" bindchanging="setfontSize" min="20" max="60" show-value/>
+        </view>
+        <view>Aa+</view>
+    </view>
+    <view class="line"></view>
+    <view class="img_control">
+        <view bindtap="chapterOpen">
+          <i class='iconfont icon-liebiao img_1'></i>
+        </view>
+        <view class="bgcolor" style="background-color: #{{item[1]}};" wx:for="{{backgroundGroup}}" data-color="{{index}}" wx:key="" bindtap="setBackground"></view>
+        <!-- <image src="/image/ic_menu_mode_night_manual.png" class="img_1" mode="aspectFit"></image> -->
+        <view bindtap="nextChapter">下一章</view>
+    </view>
+</view>

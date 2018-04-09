@@ -1,0 +1,46 @@
+<loading wx:if="{{loading}}">
+    加载中...
+</loading>
+<view wx:if='{{!loading}}' class="detail">
+        <view class="head">
+        </view>
+        <view class="body">
+            <scroll-view scroll-y="true" style="height:100%">
+                <view class="top_view">
+                    <image class="top_bg" src="{{bookinfo.image}}"
+                           mode="scaleToFill"></image>
+                    <view class="item_inhave"></view>
+                    <view class="top_item">
+                        <view class="top_item_img_text">
+                            <image class="item_img" src="{{bookinfo.image}}"
+                                   mode="aspectFill"></image>
+                            <view class="item_text">
+                                <text class="text_title">{{bookinfo.title}}</text>
+                                <text class="text_author">{{bookinfo.author}}</text>
+                                <view class="text_tags_layout">
+                        
+                                </view>
+                            </view>
+                        </view>
+                        <view class="top_btn">
+                            <button class="btn_read" bindtap='onRead'>阅 读</button>
+                            <button class="btn_collect {{hasSave?'btu_rq':''}}" bindtap="{{!hasSave?'onAddBook':''}}">
+                                {{hasSave?"已在书架":"加入书架"}}
+                            </button>
+                        </view>
+                    </view>
+                </view>
+                <view class="contact_style" bindtap='chapterOpen'>
+                    <text class="contact_text">查看目录：共{{bookinfo.chapter.length}}章</text>
+                    <i class='iconfont icon-jiantou-right'></i>
+                </view>
+                <view class="view_line_bottom"></view>
+
+                <view class="view_line"></view>
+                <view class="book_instro_view">
+                    <text class="book_instro">内容简介：{{bookinfo.intro}}</text>
+                </view>
+                <view class="view_line_bottom"></view>
+            </scroll-view>
+        </view>
+    </view>

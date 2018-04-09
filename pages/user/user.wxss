@@ -1,0 +1,16 @@
+.main .head{
+  height: 300rpx;
+  text-align: center;
+  background-color: #47A1DF;
+}
+.main .head image{width: 200rpx;height: 200rpx;border-radius: 100rpx;}
+.main .head i{
+  font-size: 150rpx;
+}
+.main .head button{
+  margin-top: 20rpx;
+  width: 160rpx;
+  display: block;
+}
+
+.center{line-height: auto}

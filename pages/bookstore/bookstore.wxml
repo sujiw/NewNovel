@@ -1,0 +1,159 @@
+<loading wx:if="{{loading}}">
+    加载中...
+</loading>
+<scroll-view class='main'>
+    <view class='top'>
+        <view class='search'>
+          <input type='search' name='search' placeholder='搜书' autocomplete="off" bindconfirm='toSearch'></input>
+        </view>
+        <view class='nav'>
+            <view class="{{currentTab==0 ? 'active' : ''}}" data-current='0' bindtap='onCurrentTab'>精选</view>
+            <view class="{{currentTab==1 ? 'active' : ''}}" data-current='1' bindtap='onCurrentTab'>分类</view>
+            <view class="{{currentTab==2 ? 'active' : ''}}" data-current='2' bindtap='onCurrentTab'>排行</view>
+            <view class="{{currentTab==3 ? 'active' : ''}}" data-current='3' bindtap='onCurrentTab'>完本</view>
+        </view>
+    </view>
+    <view class='body'>
+        <swiper current="{{currentTab}}" bindchange="onCurrentTab">
+            <swiper-item>
+                <scroll-view scroll-y='true' wx:if='{{recommendData}}'>
+                    <view class='apart'></view>
+                    <view class='title2 nan'>
+                        <i class="iconfont icon-nan1"></i>
+                        <text>男生</text>
+                    </view>
+                    <view class="list">
+                        <view class="item" wx:for="{{recommendData.male}}" wx:key="title" wx:for-index="index" wx:for-item="item" bindtap='toSearch' data-value='{{item.title}}'>
+                            <view class="book" >
+                                <image class="img" src='http:{{item.image}}'></image>
+                                <view class="frame">
+                                    <view></view>
+                                </view>
+                            </view>
+                            <span class="title">{{item._title}}</span>
+                            <span class="state">{{item.state?item.state:"连载中"}}</span>
+                        </view>
+                    </view>
+                    <view class='apart'></view>
+                    <view class='title2 nv'>
+                        <i class="iconfont icon-nan1"></i>
+                        <text>女生</text>
+                    </view>
+                    <view class="list end">
+                        <view class="item" wx:for="{{recommendData.female}}" wx:key="title" wx:for-index="index" wx:for-item="item" bindtap='toSearch' data-value='{{item.title}}'>
+                            <view class="book">
+                                <image class="img" src='{{item.image}}'></image>
+                                <view class="frame">
+                                    <view></view>
+                                </view>
+                            </view>
+                            <span class="title">{{item._title}}</span>
+                            <span class="state">{{item.state?item.state:"连载中"}}</span>
+                        </view>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+            <!-- 分类 -->
+            <swiper-item>
+              <scroll-view scroll-y='true' wx:if='{{classData}}'>
+                  <view class='apart'></view>
+                  <view class='title2 nan'>
+                      <i class="iconfont icon-nan1"></i>
+                      <text>男生</text>
+                  </view>
+                  <view class='classbg'>
+                    <view class='btn' wx:if='{{classData.male}}' wx:key="name" wx:for='{{classData.male}}'>{{item.name}}</view>
+                  </view>
+                  <view class='apart'></view>
+                  <view class='title2 nv'>
+                      <i class="iconfont icon-nan1"></i>
+                      <text>女生</text>
+                  </view>
+                  <view class='classbg end'>
+                    <view class='btn' wx:if='{{classData.female}}' wx:key="name" wx:for='{{classData.female}}'>{{item.name}}</view>
+                  </view>
+              </scroll-view>
+            </swiper-item>
+            <!-- 排行 -->
+            <swiper-item>
+              <scroll-view scroll-y='true' wx:if='{{rankingData}}'>
+                  <view class='apart'></view>
+                  <view class='title2 nan'>
+                      <i class="iconfont icon-nan1"></i>
+                      <text>男生</text>
+                  </view>
+                  <view class='rankingTitle'  wx:if='{{rankingData.male}}' wx:key="name" wx:for='{{rankingData.male}}'>
+                    <view>{{item.name}}</view>
+                    <view class='butonlist'>
+                      <view class='button' wx:for='{{item.book}}' wx:key="" wx:for-item="book" bindtap='toSearch' data-value='{{book}}'>
+                        <view class='icon'>
+                          {{index+1}}
+                        </view>
+                        <view class='name'>{{book}}</view>
+                        <view>
+                          <i class='iconfont icon-jiantou-right'></i>
+                        </view>
+                      </view>
+                    </view>        
+                  </view>
+                  <view class='apart'></view>
+                  <view class='title2 nv'>
+                      <i class="iconfont icon-nan1"></i>
+                      <text>女生</text>
+                  </view>
+                  <view class='rankingTitle'  wx:if='{{rankingData.female}}' wx:key="name" wx:for='{{rankingData.female}}'>
+                    <view>{{item.name}}</view>
+                    <view class='butonlist'>
+                      <view class='button' wx:for='{{item.book}}' wx:key="" wx:for-item="book" bindtap='toSearch' data-value='{{book}}'>
+                        <view class='icon'>
+                          {{index+1}}
+                        </view>
+                        <view class='name'>{{book}}</view>
+                        <view>
+                          <i class='iconfont icon-jiantou-right'></i>
+                        </view>
+                      </view>
+                    </view>    
+                  </view>
+              </scroll-view>
+            </swiper-item>
+            <!-- 完本 -->
+            <swiper-item>
+              <scroll-view scroll-y='true' wx:if='{{finishData}}'>
+                  <view class='apart'></view>
+                  <view class='title2 nan'>
+                      <i class="iconfont icon-nan1"></i>
+                      <text>男生</text>
+                  </view>
+                  <view class='butonlist'>
+                    <view class='button' wx:for='{{finishData.male}}' wx:key="title" wx:for-item="book" bindtap='toSearch' data-value='{{book.title}}'>
+                      <view class='icon class'>
+                        {{book.class}}
+                      </view>
+                      <view class='name'>{{book.title}}</view>
+                      <view class='author'>
+                        {{book.author}}
+                      </view>
+                    </view>
+                  </view>    
+                  <view class='apart'></view>
+                  <view class='title2 nv'>
+                      <i class="iconfont icon-nan1"></i>
+                      <text>女生</text>
+                  </view>
+                  <view class='butonlist end'>
+                    <view class='button' wx:for='{{finishData.female}}' wx:key="title" wx:for-item="book" bindtap='toSearch' data-value='{{book.title}}'>
+                      <view class='icon class'>
+                        {{book.class}}
+                      </view>
+                      <view class='name'>{{book.title}}</view>
+                      <view class='author'>
+                        {{book.author}}
+                      </view>
+                    </view>
+                  </view> 
+              </scroll-view>
+            </swiper-item>
+        </swiper>
+    </view>
+</scroll-view>

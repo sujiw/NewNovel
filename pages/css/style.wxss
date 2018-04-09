@@ -1,0 +1,182 @@
+@import '../icon/iconfont.wxss';
+.main {
+    color: #fff;
+    margin: 0 auto;
+    height: 100%;
+}
+.title{height: 35rpx;background-color: #47A1DF;text-align: center;line-height: 35rpx;}
+.main .current {
+    height: 300rpx;
+    background-color: #47A1DF;
+    border-bottom: 1rpx solid #ccc;
+}
+.main .current .read1{
+  padding-top: 80rpx;
+}
+.main .book {
+    display: inline-block;
+}
+.main .blur {    
+    -webkit-filter: blur(1rpx); /* Chrome, Opera */
+       -moz-filter: blur(1rpx);
+        -ms-filter: blur(1rpx);    
+            filter: blur(1rpx);    
+}
+.main .book .img {
+    width: 160rpx;
+    height: 200rpx;
+    display: inline-block;
+    background-color: #fff;
+    border-top-left-radius: 4rpx;
+    border-bottom-left-radius: 4rpx;
+    background-image: url('http://book.mdaogo.cn/public/images/wfm.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    z-index: 1;
+}
+
+.main .book .frame {
+    margin-left: -2rpx;
+    height: 200rpx;
+    width: 8rpx;
+    border-right: 1rpx solid #ddd;
+    border-top-right-radius: 4rpx;
+    border-bottom-right-radius: 4rpx;
+    display: inline-block;
+    background-color: #fff;
+}
+
+.main .book .frame view {
+    height: 200rpx;
+    width: 1rpx;
+    background-color: #ccc;
+    margin-left: 4rpx
+}
+
+.main .current view {
+    text-align: center
+}
+
+.main .current .left {
+    float: left;
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+    display: inline-block;
+    text-align: inherit;
+}
+
+.main .current .right {
+    float: left;
+    width: 420rpx;
+    line-height: 36rpx;
+    display: inline-block;
+    text-align: inherit;
+}
+
+.main .current .right span {
+    display: block;
+    text-align: left
+}
+
+.main .read {
+    width: 660rpx;
+    margin: 0 auto;
+    padding-top: 24rpx;
+}
+
+.main .gray {
+    font-size: 26rpx;
+    color: #fff;
+}
+
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: inherit;
+}
+.main .list{padding: 10rpx;background-color: #eee}
+.main .list span{display: block}
+.main .list .title{height:auto;line-height:normal;text-align: left;background-color: transparent;color: #000;font-size: 24rpx}
+.main .state{color: #6d6d6d;font-size: 20rpx}
+.main .item{display: inline-block;padding: 10rpx 8rpx;position: relative}
+.main .choice{
+font-size: 22rpx;line-height:32rpx;position: absolute;display: inline-block;top: 170rpx;left: 124rpx;text-align: center;color: #fff;min-width: 32rpx;height: 32rpx;border-radius: 18rpx;border: 1rpx solid #fff;z-index: 1000
+}
+.main .add{
+  background: #ddd;
+}
+.main .item .selected{
+  border-color: #fff;
+  background-color: #38cb6e;
+}
+.main .item .prompt{font-size: 22rpx;line-height:32rpx;position: absolute;display: inline-block;top: -1rpx;left: 140rpx;background-color: red;text-align: center;color: #fff;min-width: 32rpx;height: 32rpx;border-radius: 18rpx;border: 1rpx solid #fff;z-index: 1000}
+.main .btn{
+    width: 106rpx;
+    background-color: transparent;
+    border: 2rpx solid #fff;
+    border-radius: 4rpx;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20rpx;
+    padding: 0rpx 12rpx;
+    cursor: pointer;
+    line-height: 38rpx;
+    vertical-align: bottom;
+}
+.main .btn:active {
+  font-size: 16rpx;
+}
+.main .disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.main .disabled:active{
+    transform: none;
+}
+.clear {
+    float: none;
+    clear: both
+}
+.main .search{
+  display: block;
+  height: 60rpx;
+  padding: 0rpx 10rpx;
+  background-color: #EEE;
+  border-radius: 5rpx;
+}
+.main .search input{height: 60rpx;font-size: 32rpx;color: #000;line-height: 100%}
+.main .nav{display:-webkit-flex;display:flex;}
+.main .nav view{font-size: 30rpx;-webkit-flex:1;flex:1;text-align: center;height: 80rpx;line-height: 80rpx;color: #fff;border-bottom: 8rpx solid #47A1DF;}
+.main .nav .active{border-color: #fff;color: #fff}
+.main .apart{height: 50rpx;}
+.center{text-align: center;line-height: 100%}
+.main .butonlist{
+  background: #fff;
+  color: #000;
+  border: 1rpx solid #ddd;
+  border-left: 0;
+  border-right: 0;
+}
+.main .butonlist .button{
+  border-bottom: 1rpx solid #ddd;
+  padding: 0rpx 20rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+}
+.main .butonlist .button:active{
+  background: #47A1DF;
+  color: #fff;
+}
+.main .butonlist .button:last-child{
+  border:0;
+}
+.main .butonlist .button .name{margin-left: 20rpx; font-size: 33rpx;}
+.main .butonlist .button .iconfont{font-size: 33rpx}
+.main .butonlist .button view{float: left}
+.main .butonlist .button view:last-child{float: right}

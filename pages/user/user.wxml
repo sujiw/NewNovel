@@ -1,0 +1,52 @@
+<view class="main">
+  <view wx:if="{{!hasUserInfo}}" class='head'>
+      <i class='iconfont icon-touxiang'></i>
+      <button class='btn' bindtap='getUserInfo'>登录/注册</button>
+  </view>
+  <view wx:else class='head center'>
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <view>{{userInfo.nickName}}</view>
+  </view>
+  <view class='apart'></view>
+  <view class='butonlist'>
+    <view class='button'>
+      <view class='icon'>
+        <i class='iconfont icon-shezhi'></i>
+      </view>
+      <view class='name'>设置</view>
+      <view>
+        <i class='iconfont icon-jiantou-right'></i>
+      </view>
+    </view>
+    <view class='button'>
+      <view class='icon'>
+        <i class='iconfont icon-dianzan1'></i>
+      </view>
+      <view class='name'>好评支持一下</view>
+      <view>
+        <i class='iconfont icon-jiantou-right'></i>
+      </view>
+    </view>
+    <view class='button'>
+      <view class='icon'>
+        <i class='iconfont icon-waibuyoujian-'></i>
+      </view>
+      <view class='name'>意见反馈</view>
+      <view>
+        <i class='iconfont icon-jiantou-right'></i>
+      </view>
+    </view>
+  </view>
+  <view class='apart'></view>
+  <view class='butonlist'>
+    <view class='button'>
+      <view class='icon'>
+        <i class='iconfont icon-tishi'></i>
+      </view>
+      <view class='name'>关于书虫库</view>
+      <view>
+        <i class='iconfont icon-jiantou-right'></i>
+      </view>
+    </view>
+  </view>
+</view>

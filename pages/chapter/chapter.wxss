@@ -1,0 +1,5 @@
+.main{color: #262626;font-size: 32rpx;}
+.main .icon-daoxu{font-size: 32rpx;margin-right: 10rpx;}
+.main .top{background: #fff;height: 100rpx;line-height: 100rpx;border-bottom: 1rpx solid #ddd;padding: 0 20rpx}
+.main .top .left{float:left}
+.main .top .right{float:right}

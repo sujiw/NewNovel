@@ -1,0 +1,20 @@
+<loading wx:if="{{loading}}">
+    加载中...
+</loading>
+<view class='main'>
+  <view class='list'>
+    <view class='item' wx:for='{{searchList}}' wx:key='_id' bindtap='onBookInfo' data-webid='{{item._id}}' data-url='{{item.url}}'>
+      <view class="book" data-id='{{index}}'>
+        <image class="img" src='{{item.image}}'></image>
+        <view class="frame">
+            <view></view>
+        </view>
+      </view>
+      <view class='introduce'>
+        <span>{{item.title}}</span>
+        <span>{{item.author}} 著</span>
+        <span>{{item.intro}}</span>
+      </view>
+    </view>
+  </view>
+</view>

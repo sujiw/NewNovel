@@ -1,0 +1,56 @@
+.main{background-color: transparent}
+.main .search{border-bottom: 1rpx solid #ccc}
+.body{color: #000;height:100%}
+.body swiper{height:100%}
+.body swiper swiper-item{height:100%}
+.body swiper swiper-item scroll-view{height:100%;} 
+.body swiper swiper-item scroll-view .list{background: #fff;margin-top: 25rpx;}
+
+.body swiper swiper-item .title2{color: #fff;font-size: 33rpx;padding: 0rpx 30rpx;text-align: left;height: 75rpx;line-height: 75rpx;background-color: #fff;border: 1rpx 0rpx solid #ddd;}
+.body swiper swiper-item .title2 text{margin-left: 20rpx;margin-top: -20rpx;}
+.body swiper swiper-item .title2 i{font-size: 40rpx;}
+
+.body swiper swiper-item .nv{background: #ff5e66}
+.body swiper swiper-item .nan{background: #47A1DF}
+.main .btn{
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  -webkit-flex:1 1 auto;flex:1 1 auto;
+}
+.main .classbg{
+  margin: 0 20rpx;
+  margin-top: 50rpx;
+  background: #ccc;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:justify;
+  -webkit-justify-content:space-between;
+  -ms-flex-pack:justify;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  border: 1rpx solid #ddd
+}
+.main .classbg .btn{border-radius: 0;border: 0}
+.main .nv{background: #ff5e66}
+.main .btn i{font-size: 200rpx;}
+.top{padding: 20rpx;background-color: #47A1DF;border-bottom: 1rpx solid #ccc;padding-bottom: 0}
+.main .rankingTitle{
+  margin: 30rpx;
+}
+.rankingTitle:last-child{margin-bottom: 200rpx;}
+.main swiper-item .end{margin-bottom: 200rpx;}
+.main .butonlist{margin-top: 20rpx;}
+.main .butonlist .button .icon{padding: 0;margin: 0;line-height: 60rpx;margin-top: 7rpx;width: 60rpx;height: 60rpx;text-align: center;font-size: 30rpx;font-weight:bold;border-radius: 30rpx}
+.main .butonlist .button:first-child .icon{background: #ff5e66;color: #fff;}
+.main .butonlist .button:nth-child(2) .icon{background: #ff815e;color: #fff;}
+.main .butonlist .button:nth-child(3) .icon{background: #ffa95e;color: #fff;}
+.main .butonlist .button .class{margin: 0;line-height: 76rpx;height: 76rpx;background: transparent;border-radius: 0;width: 150rpx}
+.main .butonlist .button:first-child .class{background: transparent;color: #000;}
+.main .butonlist .button:nth-child(2) .class{background: transparent;color: #000;}
+.main .butonlist .button:nth-child(3) .class{background: transparent;color: #000;}
+.main .butonlist .button .author{font-size: 28rpx;}
+.main .butonlist .button:active .class{color: #fff}

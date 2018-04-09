@@ -1,0 +1,22 @@
+.bottom{
+  width: 100%;
+  display:-webkit-flex;
+  display:flex;
+  position: fixed;
+  bottom: 0rpx;
+  z-index: 2000;
+}
+.bottom button{color: #fff;-webkit-flex:1;flex:1;border-radius: 0rpx;line-height: 100rpx;height: 100rpx}
+.bottom .delete{background-color: #e64340}
+.bottom button:active {
+  font-size: 32rpx;
+}
+.main .list .add{
+  margin-top: 14rpx;
+  height: 182rpx;
+  width: 146rpx;
+  text-align: center;
+  line-height: 182rpx;
+  vertical-align: top
+}
+.bottom .close{background-color: #576b95}

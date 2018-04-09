@@ -1,0 +1,21 @@
+.main {color: #262626}
+.main .list {padding: 0} 
+.main .item {display: block;background: #fff;border-bottom: 1rpx solid #ddd;padding: 10rpx;}
+.main .item:active{background: #eee}
+.main .introduce{
+  vertical-align: top;
+  font-size: 30rpx;
+  display: inline-block;width: 540rpx;height: 100rpx;margin-left: 10rpx;
+}
+.main .introduce span{color: #6d6d6d}
+.main .introduce span:first-child{
+  color: #262626;
+  font-size: 34rpx;
+}
+.main .introduce span:last-child{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+

@@ -1,0 +1,18 @@
+<view class='main'>
+  <view class='top'>
+    <view class='left'>共 {{bookinfo.chapter.length}} 章</view>
+    <view class='right' bindtap='onSort'>
+      <i class="iconfont icon-daoxu"></i>{{sort?"倒序":"正序"}}
+    </view>
+  </view>
+  <scroll-view scroll-y='true'>
+    <view class='butonlist'>
+    <view class='button' bindtap='toChapter' wx:key='name' data-id='{{index}}' wx:for='{{bookinfo.chapter}}'>
+      <view class='name'>{{item.name}}</view>
+      <view>
+        <i class='iconfont icon-jiantou-right'></i>
+      </view>
+    </view>
+  </view>
+  </scroll-view>
+</view>

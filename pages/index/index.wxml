@@ -1,0 +1,57 @@
+<view class="main">
+    <view class="current">
+        <view wx:if="{{read<0}}" class='read1'>
+          <i class="iconfont icon-book" style="font-size: 80rpx;"></i>
+          <span style="display: block;">最近阅读的书会放在这里</span>
+        </view>
+        <view wx:if="{{read>-1}}" class="read">
+            <view class="left item" bind:longpress='onAdmin'>
+              <view wx:if="{{!admin && booklist[read].update}}" class="prompt">{{booklist[read].update}}</view> 
+              <view wx:if="{{admin}}" class="choice {{booklist[read].selected?'selected':''}}">
+                <i wx:if="{{booklist[read].selected}}" class="iconfont icon-comiis_dagou"></i>
+              </view>
+              <view class="book" bind:tap='{{admin?"onSelected":"onRead"}}' data-id='{{read}}'>
+                <image class="img" src='{{booklist[read].image}}'></image>
+                <view class="frame">
+                    <view></view>
+                </view>
+              </view>
+            </view>
+            <view class="right">
+                <span style="margin-top:16rpx;">{{booklist[read].title}}</span>
+                <span class="gray" style="margin-top:10rpx;">{{booklist[read].author}} 著</span>
+                <span class="gray" style="height: 70rpx;">最近阅读：{{booklist[read].chapter[booklist[read].chapterid?booklist[read].chapterid:0].name}}</span>
+            </view>
+            <view class="right" style="text-align: left;">
+                <span class="gray" style="display:inline-block;width: 300rpx;font-size: 32rpx;">{{speed}}%</span>
+                <button class="btn " bindtap='onRead' data-id='{{read}}'>继续阅读</button>
+            </view>
+            <view class="clear"></view>
+
+        </view>
+
+    </view>
+    <view class="list">
+        <view class="item" bind:longpress='onAdmin' wx:key='update' wx:for="{{booklist}}" wx:for-index="index" wx:for-item="item" wx:if="{{index!=read}}">
+            <view wx:if="{{!admin && item.update}}" class="prompt">{{item.update}}</view> 
+            <view wx:if="{{admin}}" class="choice {{item.selected?'selected':''}}">
+              <i wx:if="{{item.selected}}" class="iconfont icon-comiis_dagou"></i>
+            </view>
+            <view class="book" bind:tap='{{admin?"onSelected":"onRead"}}' data-id='{{index}}'>
+                <image class="img" src='{{item.image}}'></image>
+                <view class="frame">
+                    <view></view>
+                </view>
+            </view>
+            <span class="title">{{item._title}}</span>
+            <span class="state">{{item.state?item.state:"连载中"}}</span>
+        </view>
+        <view class="item add" bindtap='onBookAdd'>
+          <i class="iconfont icon--jia"></i>
+        </view> 
+    </view>
+    <view wx:if="{{admin}}" class='bottom'>
+        <button class='delete' bind:tap='onDelete'>删除({{delectnum}})</button>
+        <button class='close' bind:tap='onAdmin'>关闭</button>
+    </view>
+</view>
